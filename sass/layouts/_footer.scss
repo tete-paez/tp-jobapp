@@ -1,0 +1,15 @@
+
+.container_footer{
+    display: flex;
+    width: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: $color--primary;
+    justify-content: center;
+}
+.by {
+    color: $color--secundary;
+    font-size: 15px;
+    font-family: $font--family-formal;
+}
+

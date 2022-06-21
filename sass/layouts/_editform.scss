@@ -1,0 +1,48 @@
+.container__modal-edit-career {
+    background-color: $color--primary;
+    color: white;
+    width: 70%;
+    border-radius: $border--corner ;
+    font-weight: bolder;
+    margin: 20px 0 20px 0;
+            .form__edit-career {
+                display: flex;
+                flex-direction: column;
+                padding: 15px;
+                font-size: 16px;
+                align-items: center;
+                    input {
+                        width: 90%;
+                        border-radius: $border--radius-imputs;
+                        margin: 10px 10px 15px 10px;
+                        font-size: larger;
+                    }
+            }
+}
+.textAreaDescription {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+                        border-radius: $border--radius-imputs;
+                        margin: 10px 10px 20px 10px;
+                        font-size: larger;
+                            textarea {
+                                margin-top: 10px;
+                                border-radius: 15px;
+                            }
+}
+.btn__alignment {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.creationSucceded {
+    background-color: green;
+    border-radius: $border--corner;
+    margin: 20px 0 5px;
+    padding: 10px 20px 10px 20px;
+    color: white;
+}
+

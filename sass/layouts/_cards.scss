@@ -1,0 +1,41 @@
+
+.container__cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: $color--background;
+      .card {
+          border-radius: $border--corner ;
+          display: flex;
+          flex-direction: column;
+          width: 20%;
+          margin: 5px;
+          margin-top: 10px;
+          padding: 10px;
+          background-color: rgb(255, 255, 255);
+            .badges-container{
+              display: flex;
+              flex-wrap: wrap;
+                .badge {
+                  background-color: $color--badges;
+                  border-radius: 10px;
+                  width: fit-content;
+                  padding: $padding--btn - 5px;
+                  margin: 1px 5px 3px 5px;
+                }
+            }
+        }
+ }
+.title__career{
+    font-family: $font--family-formal;
+    margin: 10px;
+}
+ .career_description {
+    font-family: $font--family-formal;
+    margin-top: 10px;
+    padding: 15px;
+ }
+
+
+

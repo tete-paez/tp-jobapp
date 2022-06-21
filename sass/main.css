@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.nav__bar {
+  background-color: #1B355D;
+  padding: 15px;
+  color: #a9c6f4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav__bar .nav__bar--links {
+  margin: 0 20px;
+  padding: 5px 0;
+  color: white;
+  text-decoration: none;
+  font-family: "Times New Roman", Times, serif;
+  border-bottom: transparent 1px solid;
+}
+
+.nav__bar .nav__bar--links:hover {
+  border-bottom: white 1px solid;
+  color: aliceblue;
+}
+
+.container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container__filters {
+  width: 100%;
+  background-color: #1e1c51;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 10px;
+}
+
+.container__filters .container__selects {
+  padding: 20px;
+}
+
+.container__filters .container__selects select {
+  background-color: white;
+}
+
+.btn, .edit, .delete {
+  border: none;
+  background-color: #1B355D;
+  color: white;
+  padding: 10px;
+  border-radius: 50px;
+  margin: 10px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.btn:hover, .edit:hover, .delete:hover {
+  cursor: pointer;
+  background-color: #a9c6f4;
+  color: #1B355D;
+}
+
+.container__cards {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: aliceblue;
+}
+
+.container__cards .card {
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 20%;
+  margin: 5px;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: white;
+}
+
+.container__cards .card .badges-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.container__cards .card .badges-container .badge {
+  background-color: #a1abd0;
+  border-radius: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  margin: 1px 5px 3px 5px;
+}
+
+.title__career {
+  font-family: "Times New Roman", Times, serif;
+  margin: 10px;
+}
+
+.career_description {
+  font-family: "Times New Roman", Times, serif;
+  margin-top: 10px;
+  padding: 15px;
+}
+
+.container__modal-see-details {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container__modal-see-details .card__see-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.container__modal-see-details .card__see-details .title__career {
+  font-weight: bolder;
+  font-size: 22px;
+}
+
+.flex__see-details {
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.see-details-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.edit {
+  background-color: green;
+  width: 10em;
+}
+
+.delete {
+  background-color: red;
+  width: 10em;
+}
+
+.container__modal-edit-career {
+  background-color: #1B355D;
+  color: white;
+  width: 70%;
+  border-radius: 20px;
+  font-weight: bolder;
+  margin: 20px 0 20px 0;
+}
+
+.container__modal-edit-career .form__edit-career {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 15px;
+  font-size: 16px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container__modal-edit-career .form__edit-career input {
+  width: 90%;
+  border-radius: 40px;
+  margin: 10px 10px 15px 10px;
+  font-size: larger;
+}
+
+.textAreaDescription {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+  border-radius: 40px;
+  margin: 10px 10px 20px 10px;
+  font-size: larger;
+}
+
+.textAreaDescription textarea {
+  margin-top: 10px;
+  border-radius: 15px;
+}
+
+.btn__alignment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.creationSucceded {
+  background-color: green;
+  border-radius: 20px;
+  margin: 20px 0 5px;
+  padding: 10px 20px 10px 20px;
+  color: white;
+}
+
+.container_footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: #1B355D;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.by {
+  color: #a9c6f4;
+  font-size: 15px;
+  font-family: "Times New Roman", Times, serif;
+}
+/*# sourceMappingURL=main.css.map */

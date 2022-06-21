@@ -1,0 +1,43 @@
+// SEE DETAILS MODAL
+// <div class="container__modal-see-details">
+.container__modal-see-details {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .card__see-details {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: $border--corner ;
+        background-color: white;
+        .title__career {
+            font-weight: bolder;
+            font-size: 22px;
+            
+        }
+    }
+}
+.flex__see-details {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+}   
+    .see-details-btns {
+        display: flex;
+        justify-content: flex-end;
+            
+    }
+
+
+
+.edit {
+    @extend .btn;
+    background-color: $color--edit;
+     width: 10em;
+}
+.delete {
+    @extend .btn;
+    background-color: $color--delete;
+     width: 10em;
+}

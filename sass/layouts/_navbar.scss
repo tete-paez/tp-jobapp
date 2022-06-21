@@ -1,0 +1,21 @@
+.nav__bar {
+    background-color: $color--primary;
+    padding: 15px;
+    color: $color--secundary;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+        .nav__bar--links {
+            margin: 0 20px;
+            padding: 5px 0;
+            color: white;
+            text-decoration: none;
+            font-family: $font--family-formal;
+            border-bottom: transparent 1px solid; 
+        }
+        .nav__bar--links:hover {
+            border-bottom: white 1px solid;
+            color: aliceblue;
+        }
+ 
+}
