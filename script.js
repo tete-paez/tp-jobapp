@@ -36,7 +36,7 @@ const createcards = (jobs) => {
         <span class="badge">${category}</span>
         <span class="badge">${seniority}</span>
         </div>
-        <button class="btn " onclick="getIdToSeeDetail(${id})">See Detail</button>
+        <button id="getIdToSeeDetailBtn" class="btn " onclick="getIdToSeeDetail(${id})" data-Id=${id} >See Detail</button>
     </div>`
     }
 }
@@ -63,8 +63,8 @@ const showJobDetail = (job) => {
                         </div>
                     </div>
                     <div class="see-details-btns">
-                        <button id="editBtn" class="btn edit__delete-btns edit">Edit</button>
-                        <button id="deleteBtn" class="btn edit__delete-btns delete" onclick="deleteJob">Deleteeeee</button>
+                        <button id="editBtn" class="btn edit__delete-btns edit" data-edit=${id}>Edit</button>
+                        <button id="deleteBtn" class="btn edit__delete-btns delete" data-delete=${id}>Deleteeeee</button>
                     </div>
                 </div>
            
@@ -114,14 +114,3 @@ queryId("submitJobCreation").addEventListener("click", (e) => {
     }
   );
 
-//   DELETE
-  const deleteJob = () => {
-queryId("deleteBtn").addEventListener("click", (e) => {
-    e.preventDefault()
-      fetch(`${BASE_URL}it-Jobs/${id}`, {
-        method: "DELETE",
-      })
-    .finally(() =>console.log("termine de hacer el delete"))
-})
-};
-deleteJob();
