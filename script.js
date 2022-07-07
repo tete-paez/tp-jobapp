@@ -1,27 +1,21 @@
 const BASE_URL = "https://6254d2b889f28cf72b621ad7.mockapi.io/"
 const queryId = (idName) => document.getElementById(idName)
 
-const container = document.getElementById("cardsContainer");
+// el container de todas las cards
+const container = document.getElementById("cardsContainer"); 
+// cada card tiene un data-id y es cada id de la card
 
 // REQUESTS
 
-// FETCH
+// FETCH - GET 
 
 const getJobs = () => {
     fetch(`${BASE_URL}it-Jobs`)
         .then(res => res.json())
         .then(data => createcards(data))
-        .catch(err => console.log(err))
+        .catch(err => console.log("err"))
 }
 getJobs()
-
-// en la funcion de pilar se llama userDetail
-const getIdToSeeDetail = (id) => {
-    fetch(`${BASE_URL}it-Jobs/${id}`)
-    .then(res => res.json())
-    .then(data => showJobDetail(data))
-    .catch(err => console.log(err))
-}
 
 const createcards = (jobs) => {
     for (const job of jobs) {
@@ -38,7 +32,14 @@ const createcards = (jobs) => {
         </div>
         <button id="getIdToSeeDetailBtn" class="btn " onclick="getIdToSeeDetail(${id})" data-Id=${id} >See Detail</button>
     </div>`
-    }
+    }// aca iria el set time out del spinner
+}
+
+const getIdToSeeDetail = (id) => {
+    fetch(`${BASE_URL}it-Jobs/${id}`)
+    .then(res => res.json())
+    .then(data => showJobDetail(data))
+    .catch(err => console.log(err))
 }
 
 const stopShowingCards = () => container.innerHTML = ""
@@ -46,7 +47,8 @@ const stopShowingCards = () => container.innerHTML = ""
 const showJobDetail = (job) => {
     //console.log(job)
     stopShowingCards()
-    const { name, description, location, category, seniority, id } = job
+    // aca iria el set time out del spinner?
+    const { name, description, id } = job
     container.innerHTML = `
     <div id="containerModalSeeDetails" class="container__modal-see-details">
                 <div class="card__see-details">
@@ -55,7 +57,6 @@ const showJobDetail = (job) => {
                         <div>
                             <img src="./assets/img-200x200.jpg" alt="avatardevelopers-img
                             ${name}">
-
                         </div>
                         <div>
                             <p class="career_description">${description}
@@ -63,54 +64,18 @@ const showJobDetail = (job) => {
                         </div>
                     </div>
                     <div class="see-details-btns">
-                        <button id="editBtn" class="btn edit__delete-btns edit" data-edit=${id}>Edit</button>
-                        <button id="deleteBtn" class="btn edit__delete-btns delete" data-delete=${id}>Deleteeeee</button>
-                    </div>
-                </div>
-           
-        </div>
-    `
+                        <button id="editBtn" class="btn edit__delete-btns edit">Edit</button>
+                        <button id="deleteBtn" class="btn edit__delete-btns delete" onclick="checkingDeleteThisJob" >Deleteeeee</button>
+                        </div>
+                        </div>
+                        
+                        </div>
+                        `
+                        // 
+
+    // const btnIdEdit = document.getElementById("editBtn");
+    // btnIdEdit.addEventListener("click", editJob)
+    
+    const btnIdDelete = document.getElementById("deleteBtn");
+    btnIdDelete.addEventListener("click", checkingDeleteThisJob)
 }
-
-
-
-// EL DE PILI ES SAVEuSERiNFO
-const submitJobCreation = document.getElementById("submitJobCreation")
-
-const saveAndCreateNewJob = () => {
-    return {
-        name: queryId("jobTitleForm").value,
-        description: queryId("descriptionForm").value,
-        location: queryId("tagLocationForm").value,
-        categoryme: queryId("tagCategoryForm").value,
-        seniority: queryId("tagSeniorityForm").value
-
-    }
-}
-
-const succededCreation = () => {
-    queryId("jobCreationSucceded").innerHTML += `
-    <p class="creationSucceded">Your youb has been uploaded Succesfully!</p>
-    `
-}
-
-// // POST 
-queryId("submitJobCreation").addEventListener("click", (e) => {
-    e.preventDefault()
-      fetch(`${BASE_URL}it-Jobs`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "Application/json",
-        },
-        body: JSON.stringify(saveAndCreateNewJob()),
-      })
-      .then(res => {
-          if (res.ok) {
-              succededCreation()
-          }
-      })
-      .catch(err => console.log(err))
-      .finally(() => location.reload());
-    }
-  );
-
