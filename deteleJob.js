@@ -4,9 +4,10 @@ const divDondeEstaLaModalSiDeseoEliminar = document.getElementById("cardsContain
 
 const deleteJob = (id) => {
       fetch(`${BASE_URL}it-Jobs/${id}`, {
-      method: "DELETE",
-    }).finally(() => console.log("termine de hacer el delete"));
-  
+          method: "DELETE",
+        })
+        .then(()=>getJobs())
+        .finally(() => console.log("termine de hacer el delete"));
 };
 
 // que aparezca la modal si estas seguro que queres borrar
@@ -14,17 +15,18 @@ const modalAreYouSureYouWantToDeleteThisJob = document.getElementById(
   "modalCheckingDeleteThisJob");
 
 const checkingDeleteThisJob = (id) => {
+    console.log("click");
     divDondeEstaLaModalSiDeseoEliminar.innerHTML += `
-    <div class="modal-container" id="modalCheckingDeleteThisJob">
-        <div class="modal" >
-            <h4>Sure you want to delete this job?</h4>
+    <div class="modal-delete-container" id="modalCheckingDeleteThisJob">
+        <div class="modal-delete" >
+            <h4>Are you sure you want to delete this job?</h4>
             <div class="cancel-accept">
-                <button id="closeModalDeleteJob" class="btn">Cancel</i></button>
-                <button id="acceptJobDelete" class="btn" data-id=${id} onclick="deleteJob(${id})" >Yes, Delete it!</button>
+                <button id="closeModalDeleteJob" class="btn edit">Cancel</i></button>
+                <button id="acceptJobDelete" class="btn delete">Yes, Delete it!</button>
             </div>
         </div>
     </div>`;
-
+// cancel
   const cancelDeletingThisJobBtn = document.getElementById("closeModalDeleteJob")
 
   const modalDelete = document.getElementById("modalCheckingDeleteThisJob")
@@ -33,10 +35,12 @@ const checkingDeleteThisJob = (id) => {
     showJobDetail(job);
   });
 
+//delete
   const acceptDeletingThisJobBtn = document.getElementById("acceptJobDelete");
         acceptDeletingThisJobBtn.addEventListener("click", () => {
-    deleteJob(job);
+    deleteJob(id);
   });
+
 };
 
 // al hacer click en boton eliminar > se tiene que abrir una modal que consulte si quiere borrar ese aviso
@@ -45,6 +49,5 @@ const checkingDeleteThisJob = (id) => {
 
 // al hacer click en ese boton se tiene que ejecutar la petición delete y hay que pasarle el ID como parámetro, desde el botón, al método
 
-// btnIdDelete.addEventListener("click", () => {
-//     modalAreYouSureYouWantToDeleteThisJob.classList.add("show");
+
 

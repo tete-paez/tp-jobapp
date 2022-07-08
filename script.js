@@ -18,6 +18,7 @@ const getJobs = () => {
 getJobs()
 
 const createcards = (jobs) => {
+    container.innerHTML=""
     for (const job of jobs) {
         const { name, description, location, category, seniority, id } = job
         container.innerHTML += `
@@ -30,9 +31,10 @@ const createcards = (jobs) => {
         <span class="badge">${category}</span>
         <span class="badge">${seniority}</span>
         </div>
-        <button id="getIdToSeeDetailBtn" class="btn " onclick="getIdToSeeDetail(${id})" data-Id=${id} >See Detail</button>
+        <button onClick="getIdToSeeDetail(${id})" class="btn" >See Details</button>
     </div>`
     }// aca iria el set time out del spinner
+
 }
 
 const getIdToSeeDetail = (id) => {
@@ -65,7 +67,7 @@ const showJobDetail = (job) => {
                     </div>
                     <div class="see-details-btns">
                         <button id="editBtn" class="btn edit__delete-btns edit">Edit</button>
-                        <button id="deleteBtn" class="btn edit__delete-btns delete" onclick="checkingDeleteThisJob" >Deleteeeee</button>
+                        <button id="deleteBtn" class="btn delete edit__delete-btns">Deleteeeee</button>
                         </div>
                         </div>
                         
@@ -77,5 +79,9 @@ const showJobDetail = (job) => {
     // btnIdEdit.addEventListener("click", editJob)
     
     const btnIdDelete = document.getElementById("deleteBtn");
-    btnIdDelete.addEventListener("click", checkingDeleteThisJob)
+    btnIdDelete.addEventListener("click", ()=> checkingDeleteThisJob(id))
 }
+
+
+
+
