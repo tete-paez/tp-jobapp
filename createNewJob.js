@@ -3,7 +3,6 @@ const queryId = (idName) => document.getElementById(idName)
 
 const container = document.getElementById("cardsContainer");
 
-// EL DE PILI ES SAVEuSERiNFO
 const submitJobCreation = document.getElementById("submitJobCreation")
 
 const saveAndCreateNewJob = () => {
@@ -19,7 +18,7 @@ const saveAndCreateNewJob = () => {
 
 const succededCreation = () => {
     queryId("jobCreationSucceded").innerHTML += `
-    <p class="creationSucceded">Your youb has been uploaded Succesfully!</p>
+    <p class="creationSucceded">Your job has been uploaded Succesfully!</p>
     `
 }
 

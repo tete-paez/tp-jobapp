@@ -66,7 +66,7 @@ const showJobDetail = (job) => {
                         </div>
                     </div>
                     <div class="see-details-btns">
-                        <button id="editBtn" class="btn edit__delete-btns edit">Edit</button>
+                        <button id="editBtn" class="btn edit__delete-btns edit" onClick="renderEditForm(${id})" >Edit</button>
                         <button id="deleteBtn" class="btn delete edit__delete-btns">Deleteeeee</button>
                         </div>
                         </div>
