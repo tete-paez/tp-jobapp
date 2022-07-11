@@ -11,7 +11,7 @@ const saveAndCreateNewJob = () => {
         description: queryId("descriptionForm").value,
         location: queryId("tagLocationForm").value,
         categoryme: queryId("tagCategoryForm").value,
-        seniority: queryId("tagSeniorityForm").value
+        seniority: queryId("tagExperience").value
 
     }
 }

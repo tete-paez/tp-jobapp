@@ -9,31 +9,46 @@
 const renderEditForm = (id) => {
   container.innerHTML = "";
   container.innerHTML += `
-    <div id="jobEditionForm">
-    </div>
-    <div class="container__modal-edit-career">
-        <form id="modal-editate-job" action="">
-                <div class="form__edit-career">
-                    <label>Job Title </label>
-                    <input id="editJobTitleForm" type="text" required>
-                    <div class="textAreaDescription">
+  <div id="jobCreationSucceded">
+  </div>
+  <div class="container__modal-edit-career">
+      <form id="modal-create-job" action="">
+          <div class="form__edit-career">
+              <label>Job Title </label>
+              <input id="editJobTitleForm" type="text" required>
+              <div class="textAreaDescription">
 
-                        <label>Description </label>
-                        <textarea name="" id="editDescriptionForm" rows="5"></textarea>
-                    </div>
+                  <label>Description </label>
+                  <textarea name="" id="editDescriptionForm" rows="5"></textarea>
+              </div>
 
-                    <label>Tags </label>
-                    <input id="editTagLocationForm" type="text" required>
-                    <input id="editTagCategoryForm" type="text" required>
-                    <input id="editTagSeniorityForm" type="text" required>
-                </div>
-            <div class="btn__alignment">
-                    <button id="cancelledJobEditionBtn" class="btn delete" type="submit">Cancel</button>
-                    <button id="submitJobedition" class="btn edit" type="submit" onclick="editJob(${id})">Edit</button>
-            </div>
+              <label>Tags </label>
+              <select name="Location" id="editTagLocationForm">
+                  <option value="Location">Location*</option>
+                  <option value="BuenosAires">Buenos Aires</option>
+                  <option value="Cordoba">Cordoba</option>
+                  <option value="Neuquen">Neuquen</option>
+                  <option value="La Pampa">La Pampa</option>
+              </select>
+              <select name="Category" id="editTagCategoryForm">
+                  <option value="Seniority">Seniority*</option>
+                  <option value="Trainee">Trainee</option>
+                  <option value="Junior">Junior</option>
+                  <option value="Semi-Senior">Semi Senior</option>
+                  <option value="Senior">Senior</option>
+              </select>
+              <select name="Experience" id="editTagSeniorityForm">
+                  <option value="Yes">Experience*</option>
+                  <option value="No">Yes</option>
+                  <option value="Competition">No</option>
+              </select>
+          </div>
+          <div class="btn__alignment">
+              <button id="cancelledJobCreationBtn" class="btn delete" type="submit">Cancel</button>
+              <button id="submitJobCreation" class="btn edit" type="submit" onclick="submitJobCreation" >Submit</button>
+          </div>
 
-        </form>
-    </div>`;
+      </form>`
 };
 // TOMA LOS VALORES DEL FORM debo hacer que esto ande con el boton de submit del formulario editar
 const editAndCreateNewJob = () => {

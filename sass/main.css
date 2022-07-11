@@ -242,6 +242,13 @@
   font-size: larger;
 }
 
+select {
+  width: 90%;
+  border-radius: 40px;
+  margin: 10px 10px 15px 10px;
+  font-size: larger;
+}
+
 .textAreaDescription {
   display: -webkit-box;
   display: -ms-flexbox;
